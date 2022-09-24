@@ -1,0 +1,17 @@
+{
+  "name": "11ty-poc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @11ty/eleventy --formats=njk,css,js",
+    "dev": "npx @11ty/eleventy --serve --formats=njk,css,js"
+  },
+  "keywords": [],
+  "author": "tatjsn <tatjsn@gmail.com> (https://github.com/tatjsn/)",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0-canary.16",
+    "@11ty/eleventy-plugin-vite": "^1.0.0"
+  }
+}
