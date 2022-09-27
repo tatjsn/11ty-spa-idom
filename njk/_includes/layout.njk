@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="/main.css">
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="https://unpkg.com/spa-idom@0.0.1/dist/main.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app" class="container mx-auto">
+    <div spa-app class="container mx-auto">
       <h1 class="text-3xl font-bold mb-3">11ty Single Page App Demo</h1>
       <p>This demo contains 3 static pages that can navigates via tabs UI implemented using anchors that works witout JS.</p>
       <p>With spa-with-idom library, these pages will be enhanced with single page navigation and the benefits of preserved local states and continuous media playback.</p>
@@ -33,5 +33,6 @@
       <h2 class="text-2xl font-bold mb-3">Media Playback</h2>
       <p><iframe width="560" height="315" src="https://www.youtube.com/embed/Pp0u6_5oQNU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
     </div>
+    <div spa-loading style="position: fixed; top: 0; display:none"><span style="color: white; background-color: black">Loading...</span></div>
   </body>
 </html>
