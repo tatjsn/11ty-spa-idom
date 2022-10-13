@@ -11,8 +11,6 @@
   <body>
     <div spa-app class="container mx-auto">
       <h1 class="text-3xl font-bold mb-3">11ty Single Page App Demo</h1>
-      <p>This demo contains 3 static pages that can navigates via tabs UI implemented using anchors that works witout JS.</p>
-      <p>With spa-with-idom library, these pages will be enhanced with single page navigation and the benefits of preserved local states and continuous media playback.</p>
       <h2 class="text-2xl font-bold mb-3">Tabs</h2>
       <ul class="flex">
         {%- for tab in collections.all -%}
@@ -23,9 +21,9 @@
           {%- endif -%}
         {%- endfor -%}
       </ul>
-      <p class="border-solid border-2 border-black rounded p-6">
+      <div class="border-solid border-2 border-black rounded p-6">
         {{ content | safe  }}
-      </p>
+      </div>
       <h2 class="text-2xl font-bold mb-3">Form Input</h2>
       <p>
         <input type="text" placeholder="Type something here">
