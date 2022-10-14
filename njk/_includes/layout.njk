@@ -6,30 +6,34 @@
     <link rel="stylesheet" href="/main.css">
     <script type="module" src="https://unpkg.com/spa-idom@0.0.5/dist/main.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Eleventy SPA Demo</title>
   </head>
   <body>
-    <div spa-app class="mx-auto" style="max-width: 800px">
-      <h1 class="text-3xl font-bold mb-3">11ty Single Page App Demo</h1>
-      <h2 class="text-2xl font-bold mb-3">Tabs</h2>
-      <ul class="flex">
-        {%- for tab in collections.all -%}
-          {%- if page.url == tab.url -%}
-            <li class="mx-1"><span class="rounded-t-lg text-white bg-black p-2 inline-block">{{ tab.data.title  }}</li>
-          {%- else -%}
-            <li class="mx-1"><a class="rounded-t-lg bg-gray-200 p-2 inline-block" href="{{ tab.url  }}">{{ tab.data.title }}</a></li>
-          {%- endif -%}
-        {%- endfor -%}
-      </ul>
-      <div class="border-solid border-2 border-black rounded p-6">
+    <div spa-app class="mx-auto max-w-xl">
+      <div class="flex justify-between items-baseline p-10">
+        <div class="text-3xl font-bold">spa-with-idom</div>
+        <div class="text-xl">
+          {% for tab in collections.all %}
+            {% if page.url == tab.url %}
+              <span class="mx-4 font-bold">{{ tab.data.title  }}</span>
+            {% else %}
+              <a class="mx-4 hover:underline" href="{{ tab.url }}">{{ tab.data.title  }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="p-10 prose">
         {{ content | safe  }}
       </div>
-      <h2 class="text-2xl font-bold mb-3">Form Input</h2>
-      <p>
-        <input type="text" placeholder="Type something here">
-      </p>
-      <h2 class="text-2xl font-bold mb-3">Media Playback</h2>
-      <p><iframe width="560" height="315" src="https://www.youtube.com/embed/Pp0u6_5oQNU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+      <div>
+        <video
+          style="width: 320px; display: block; position: fixed; bottom: 0; right: 0"
+          src="/dance.mp4"
+          autoplay
+          loop
+          muted
+        ></video>
+      </div>
     </div>
     <div spa-loading style="position: fixed; top: 0; display:none"><span style="color: white; background-color: black">Loading...</span></div>
   </body>
