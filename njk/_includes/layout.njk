@@ -13,11 +13,12 @@
       <div class="flex justify-between items-baseline p-10">
         <div class="text-3xl font-bold">spa-with-idom</div>
         <div class="text-xl">
-          {% for tab in collections.all %}
+          {% set tabs = collections.all | eleventyNavigation %}
+          {% for tab in tabs %}
             {% if page.url == tab.url %}
-              <span class="mx-4 font-bold">{{ tab.data.title  }}</span>
+              <span class="mx-4 font-bold">{{ tab.title  }}</span>
             {% else %}
-              <a class="mx-4 hover:underline" href="{{ tab.url }}">{{ tab.data.title  }}</a>
+              <a class="mx-4 hover:underline" href="{{ tab.url }}">{{ tab.title  }}</a>
             {% endif %}
           {% endfor %}
         </div>
